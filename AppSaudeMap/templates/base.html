@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	{% load static %}
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>
+			{% block title %}Sistema Controle Doenças Crônicas{% endblock %}	
+		</title>
+	    <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="container">
+				<h2>Sistema Controle Doenças Crônicas</h2>
+				<p><a href="{% url 'index' %}">Pagina inicial</a></p>
+				
+				<!-- Bloco de Conteúdo -->
+				{% block conteudo %}{% endblock %}	
+				<br><br>				
+				<p>SaudeMap - 2019 Copyright</p>
+			</div>	
+		</div>	
+    </body>
+
+</html>
