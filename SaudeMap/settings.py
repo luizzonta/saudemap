@@ -26,8 +26,8 @@ SECRET_KEY = 'c#e^8-73rwh3^37f2zqnjo*1cqoddiw3!kks-y5dj-4r1p0b!s'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'saudemap.herokuapp.com',
-    'localhost'
+    'localhost',
+    'saudemap.herokuapp.com'
 ]
 
 # Application definition
