@@ -25,7 +25,10 @@ SECRET_KEY = 'c#e^8-73rwh3^37f2zqnjo*1cqoddiw3!kks-y5dj-4r1p0b!s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost'
+    'professorapp.herokuapp.com'
+]
 
 
 # Application definition
@@ -120,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+import django_heroku
+django_heroku.settings(locals())
