@@ -81,6 +81,33 @@ class FichaDoenca(models.Model):
         null=False,
         blank=False
     )
+    
+    endereco = models.CharField(
+        max_length=255,
+        null=True,
+        blank=False
+    )
+    numero = models.CharField(
+        max_length=10,
+        null=True,
+        blank=False
+    )
+    bairro = models.CharField(
+        max_length=50,
+        null=True,
+        blank=False
+    )
+    cidade = models.CharField(
+        max_length=50,
+        null=True,
+        blank=False
+    )
+    uf = models.CharField(
+        max_length=2,
+        null=True,
+        blank=False
+    )
+    
     gestante = models.CharField(
         max_length=3,
         null=False,
@@ -89,7 +116,7 @@ class FichaDoenca(models.Model):
     
     peso = models.CharField(  
         max_length=255,
-        null=False,
+        null=True,
         blank=False
     )
     
@@ -188,4 +215,17 @@ class FichaDoenca(models.Model):
         null=False,
         blank=False
     )
+    
+    latitude = models.DecimalField(
+        max_digits=10,
+        decimal_places=8,
+        null=True,
+        blank=False
+    )    
+    longetude = models.DecimalField(
+        max_digits=11,
+        decimal_places=8,
+        null=True,
+        blank=False
+    )    
     objetos = models.Manager()
