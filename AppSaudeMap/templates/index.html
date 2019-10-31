@@ -4,6 +4,12 @@
 
 {% block conteudo %}
 
+{% load static %}
+
+	<div class="container">
+		<h2>Sistema Controle Doencas Cronicas</h2>
+		<img class="img-fluid" class="img-thumbnail" src="{% static 'img/map_top.png'%}" width="1024" height="600" alt="Mapa Doencas Cronicas">
+	</div>		
 	<div class="container">
 		<div class="row" >
 			<div class="col-sm">
@@ -20,7 +26,7 @@
 			<div class="col-sm">
 				<div class="p-3 mb-2 bg-primary text-white">
 					<h4 class="text-center">
-						<button type="button" class="btn btn-primary">Ficha Cadastro Saúde</button>
+					    <p><a href="{% url 'cadastro_individual' %}"><button type="button" class="btn btn-primary">Ficha Cadastro Saude</button></a></p>
 					</h4>
 				</div>
 			</div>
@@ -44,7 +50,7 @@
 			<div class="col-sm">
 				<div class="p-3 mb-2 bg-primary text-white">
 					<h4 class="text-center">
-						<button type="button" class="btn btn-primary">Vizualisar Gráficos</button>
+						<button type="button" class="btn btn-primary">Visualizar Gráficos</button>
 					</h4>
 				</div>
 			</div>

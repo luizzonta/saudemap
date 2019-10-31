@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro de Clientes{% endblock %}
+
+{% block conteudo %}
+
+{% load static %}
+
+	<div class="container">
+		<div class="row" >
+			<div class="col-sm-2">
+				<img class="img-fluid" class="img-thumbnail" src="{% static 'img/esus.jpg'%}" width="300" height="168" alt="Logotipo eSus">
+			</div>
+			<div class="col-sm-6">
+				<h1 class="text-center">
+					<p>CADASTRO INDIVIDUAL</p>
+				</h1>
+			</div>
+			<div class="col-sm-2">
+				<h4 class="text-center">
+					<p>TESTE1</p>
+				</h4>
+			</div>
+			<div class="col-sm-2">
+				<h4 class="text-center">
+					<p>TESTE2</p>
+				</h4>
+			</div>
+		</div>
+		<br>
+		<form>
+		  	<div class="row">
+				<div class="col-sm-3">
+			    	<input type="text" class="form-control" placeholder="CNS do Profissional">
+			    </div>
+			    <div class="col-sm-2">
+			    	<input type="text" class="form-control" placeholder="CBO">
+			    </div>
+			    <div class="col-sm-2">
+			    	<input type="text" class="form-control" placeholder="CNES">
+			    </div>
+			    <div class="col-sm-2">
+			    	<input type="text" class="form-control" placeholder="INE">
+			    </div>
+			    <div class="col-sm-3">
+			    	<input type="text" class="form-control" placeholder="DATA">
+			    </div>
+			</div>
+			<br>
+			<h6 class="text-left">
+				<p>Identificação do Usuário / Cidadão</p>
+			</h6>
+
+		  	<div class="row">
+				<div class="col-sm-3">
+			    	<input type="text" class="form-control" placeholder="CNS do Profissional">
+			    </div>
+			    <div class="col-sm-2">
+			    	<input type="text" class="form-control" placeholder="CBO">
+			    </div>
+			    <div class="col-sm-2">
+			    	<input type="text" class="form-control" placeholder="CNES">
+			    </div>
+			    <div class="col-sm-2">
+			    	<input type="text" class="form-control" placeholder="INE">
+			    </div>
+			    <div class="col-sm-3">
+			    	<input type="text" class="form-control" placeholder="DATA">
+			    </div>
+			</div>
+
+
+
+		</form>		
+	</div>
+	
+{% endblock %}

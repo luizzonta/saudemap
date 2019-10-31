@@ -1,3 +1,23 @@
+h1 {
+	color: #2d10b3;
+}
+
+h2 {
+	color: #2d10b3;
+}
+
+h3 {
+	color: #FFC125;
+}
+
+h4 {
+	color: #ef2929;
+}
+
+h6 {
+	color: #2d10b3;
+}
+
 tr, th,td 
 {
 	border: 1px solid #000000;
