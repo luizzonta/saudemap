@@ -14,8 +14,9 @@ h4 {
 	color: #ef2929;
 }
 
-h6 {
-	color: #2d10b3;
+h5 {
+	color: #3e18f0;
+	font-weight: bold;
 }
 
 tr, th,td 
@@ -28,6 +29,12 @@ div.container-fluid {
 }
 
 div.container {
+/*	text-align: center;*/
+	background: #DCDCDC;
+/*	style="font-size:12	px;"*/
+}
+
+div.containerTitulo {
 	text-align: center;
 	background: #DCDCDC;
 }

@@ -1,77 +1,75 @@
 {% extends "base.html" %}
 
-{% block title %}Cadastro de Clientes{% endblock %}
+{% block title %}Ficha Cadastro Individual{% endblock %}
 
 {% block conteudo %}
 
 {% load static %}
 
-	<div class="container">
-		<div class="row" >
-			<div class="col-sm-2">
-				<img class="img-fluid" class="img-thumbnail" src="{% static 'img/esus.jpg'%}" width="300" height="168" alt="Logotipo eSus">
-			</div>
-			<div class="col-sm-6">
-				<h1 class="text-center">
-					<p>CADASTRO INDIVIDUAL</p>
-				</h1>
-			</div>
-			<div class="col-sm-2">
-				<h4 class="text-center">
-					<p>TESTE1</p>
-				</h4>
-			</div>
-			<div class="col-sm-2">
-				<h4 class="text-center">
-					<p>TESTE2</p>
-				</h4>
+	<form method="post">
+		{% csrf_token %}	
+
+		<div class="container">
+			<div class="row" >
+				<div class="col-sm-2">
+					<img class="img-fluid" class="img-thumbnail" src="{% static 'img/esus.jpg'%}" width="300" height="168" alt="Logotipo eSus">
+				</div>
+				<div class="col-sm-7">
+					<h1 class="text-center">
+						<p>CADASTRO INDIVIDUAL</p>
+					</h1>
+				</div>
+				<div class="col-sm-3">
+					<br>
+				    <label for="ine"><strong>Data</strong></label>
+					<br>
+					{{ form.data }}
+				</div>
 			</div>
 		</div>
-		<br>
-		<form>
+		<br>		
+		<div class="container">
 		  	<div class="row">
-				<div class="col-sm-3">
-			    	<input type="text" class="form-control" placeholder="CNS do Profissional">
-			    </div>
-			    <div class="col-sm-2">
-			    	<input type="text" class="form-control" placeholder="CBO">
-			    </div>
-			    <div class="col-sm-2">
-			    	<input type="text" class="form-control" placeholder="CNES">
-			    </div>
-			    <div class="col-sm-2">
-			    	<input type="text" class="form-control" placeholder="INE">
-			    </div>
-			    <div class="col-sm-3">
-			    	<input type="text" class="form-control" placeholder="DATA">
-			    </div>
+				<div class="col-sm-9">
+				</div>
 			</div>
-			<br>
-			<h6 class="text-left">
-				<p>Identificação do Usuário / Cidadão</p>
-			</h6>
-
 		  	<div class="row">
 				<div class="col-sm-3">
-			    	<input type="text" class="form-control" placeholder="CNS do Profissional">
-			    </div>
-			    <div class="col-sm-2">
-			    	<input type="text" class="form-control" placeholder="CBO">
-			    </div>
-			    <div class="col-sm-2">
-			    	<input type="text" class="form-control" placeholder="CNES">
-			    </div>
-			    <div class="col-sm-2">
-			    	<input type="text" class="form-control" placeholder="INE">
+				</div>
+			</div>
+		  	<div class="row">
+				<div class="col-sm-3">
+				    <label for="cnsProfissional"><strong>CNS do Profissional</strong></label>
+					<br>
+					{{form.cnsProfissional }}
 			    </div>
 			    <div class="col-sm-3">
-			    	<input type="text" class="form-control" placeholder="DATA">
+				    <label for="cbo"><strong>CBO</strong></label>
+					<br>
+					{{ form.cbo }}
+			    </div>
+			    <div class="col-sm-3">
+				    <label for="cnes"><strong>CNES</strong></label>
+					<br>
+					{{ form.cnes }}
+			    </div>
+			    <div class="col-sm-3">
+				    <label for="ine"><strong>INE</strong></label>
+					<br>
+					{{ form.ine }}
+
 			    </div>
 			</div>
 
 
+	        <center>
+				<br><br>
+				<button class="btn btn-primary">Salvar</button>
+				<a href="{% url 'index' %}"><button type="button" class="btn btn-danger">Cancelar</button></a>
+	        </center>
+		</div>
+				
+	</form>
 
-		</form>		
-	</div>
-	
+
 {% endblock %}

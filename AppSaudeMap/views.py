@@ -1,7 +1,5 @@
 from django.views.generic import TemplateView
 from SaudeMap.models import FichaDoenca
-from django.contrib.messages.api import success
-from audioop import reverse
 from django.urls.base import reverse_lazy
 from django.views.generic.edit import CreateView
 
