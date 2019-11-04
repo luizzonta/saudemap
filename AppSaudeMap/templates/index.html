@@ -1,12 +1,64 @@
 {% extends "base.html" %}
 
-{% block title %}Sistema Controle Doenças Crônicas{% endblock %}
+{% block title %}Sistema Controle Doenças Cronicas{% endblock %}
 
 {% block conteudo %}
-	<h3>Controle Doenças Crônicas</h3>
-	<p>Lance aqui um novo indivíduo</p>
 
-	<h3>Listar dados</h3>
-	<p>lista dos individuos cadastrados.</p>
+{% load static %}
 
+	<div class="containerTitulo">
+		<h2>Sistema Controle Doenças Cronicas</h2>
+		<img class="img-fluid" class="img-thumbnail" src="{% static 'img/map_top.png'%}" width="1024" height="600" alt="Mapa Doencas Cronicas">
+	</div>		
+	<div class="containerTitulo">
+		<div class="row" >
+			<div class="col-sm">
+				<div class="p-3 mb-2 text-white">
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="p-3 mb-2 bg-primary text-white">
+					<h4 class="text-center">
+						<button type="button" class="btn btn-primary">Ficha Cadastro Domiciliar</button>				
+					</h4>
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="p-3 mb-2 bg-primary text-white">
+					<h4 class="text-center">
+					    <p><a href="{% url 'cadastro_individual' %}"><button type="button" class="btn btn-primary">Ficha Cadastro Saude</button></a></p>
+					</h4>
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="p-3 mb-2 text-white">
+				</div>
+			</div>
+		</div>	  
+		<div class="row" >
+			<div class="col-sm">
+				<div class="p-3 mb-2 text-white">
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="p-3 mb-2 bg-primary text-white">
+					<h4 class="text-center">
+						<button type="button" class="btn btn-primary">Visualizar Mapas</button>				
+					</h4>
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="p-3 mb-2 bg-primary text-white">
+					<h4 class="text-center">
+						<button type="button" class="btn btn-primary">Visualizar Gráficos</button>
+					</h4>
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="p-3 mb-2 text-white">
+				</div>
+			</div>
+		</div>	  
+	</div>
+	
 {% endblock %}

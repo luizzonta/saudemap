@@ -1,3 +1,24 @@
+h1 {
+	color: #2d10b3;
+}
+
+h2 {
+	color: #2d10b3;
+}
+
+h3 {
+	color: #FFC125;
+}
+
+h4 {
+	color: #ef2929;
+}
+
+h5 {
+	color: #3e18f0;
+	font-weight: bold;
+}
+
 tr, th,td 
 {
 	border: 1px solid #000000;
@@ -8,6 +29,12 @@ div.container-fluid {
 }
 
 div.container {
+/*	text-align: center;*/
+	background: #DCDCDC;
+/*	style="font-size:12	px;"*/
+}
+
+div.containerTitulo {
 	text-align: center;
 	background: #DCDCDC;
 }
