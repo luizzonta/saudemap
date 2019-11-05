@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load widget_tweaks %}
+
 {% block title %}Ficha Cadastro Individual{% endblock %}
 
 {% block conteudo %}
@@ -21,44 +23,38 @@
 				</div>
 				<div class="col-sm-3">
 					<br>
-				    <label for="ine"><strong>Data</strong></label>
-					<br>
-					{{ form.data }}
 				</div>
 			</div>
 		</div>
 		<br>		
 		<div class="container">
 		  	<div class="row">
-				<div class="col-sm-9">
-				</div>
-			</div>
-		  	<div class="row">
-				<div class="col-sm-3">
-				</div>
-			</div>
-		  	<div class="row">
 				<div class="col-sm-3">
 				    <label for="cnsProfissional"><strong>CNS do Profissional</strong></label>
 					<br>
-					{{form.cnsProfissional }}
+					{% render_field form.cnsProfissional class+="form-control" %}
 			    </div>
-			    <div class="col-sm-3">
+			    <div class="col-sm-2">
 				    <label for="cbo"><strong>CBO</strong></label>
 					<br>
-					{{ form.cbo }}
+					{% render_field form.cbo class+="form-control" %}
 			    </div>
-			    <div class="col-sm-3">
+			    <div class="col-sm-2">
 				    <label for="cnes"><strong>CNES</strong></label>
 					<br>
-					{{ form.cnes }}
+					{% render_field form.cnes class+="form-control" %}
 			    </div>
-			    <div class="col-sm-3">
+			    <div class="col-sm-2">
 				    <label for="ine"><strong>INE</strong></label>
 					<br>
-					{{ form.ine }}
+					{% render_field form.ine class+="form-control" %}
 
 			    </div>
+				<div class="col-sm-3">
+				    <label for="ine"><strong>Data</strong></label>
+					<br>
+					{% render_field form.data class+="form-control" %}
+				</div>
 			</div>
 
 
