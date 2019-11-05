@@ -29,5 +29,4 @@ class FichaDoenca(models.Model):
     )
 
 
-
     objetos = models.Manager()

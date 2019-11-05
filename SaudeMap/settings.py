@@ -26,8 +26,8 @@ SECRET_KEY = 'c#e^8-73rwh3^37f2zqnjo*1cqoddiw3!kks-y5dj-4r1p0b!s'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-#    'localhost',
-#    'saudemap.herokuapp.com'
+    'localhost',
+    'saudemap.herokuapp.com'
 ]
 
 # Application definition
@@ -125,5 +125,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#import django_heroku
-#django_heroku.settings(locals())
+import django_heroku
+django_heroku.settings(locals())
