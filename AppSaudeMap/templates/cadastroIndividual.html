@@ -56,13 +56,67 @@
 					{% render_field form.data class+="form-control" %}
 				</div>
 			</div>
-
-	        <center>
-				<br><br>
-				<button class="btn btn-primary">Salvar</button>
-				<a href="{% url 'index' %}"><button type="button" class="btn btn-danger">Cancelar</button></a>
-	        </center>
 		</div>
+		<br>
+		<div class="container">
+			<div class="card">
+				<div class="card-header">
+			  		<h5>Identificacao do Usuario / Cidadao</h5>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-sm-3">
+						    <label for="cnsCidadao"><strong>CNS do Cidadao</strong></label>
+							{% render_field form.cnsCidadao class+="form-control" %}
+					    </div>
+<!--					    <div class="col-sm-3">
+							<strong>Responsavel familiar?</strong>
+							<br><p></p>
+							<div class="custom-control custom-radio custom-control-inline">
+							  <input type="radio" class="custom-control-input" id="rf_sim">
+							  <label class="custom-control-label" for="rf_sim">Sim</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+							  <input type="radio" class="custom-control-input" id="rf_nao">
+							  <label class="custom-control-label" for="rf_nao">Nao</label>
+							</div>
+							
+					    </div>
+						<div class="col-sm-3">
+						    <label for="cnsresponsavelFamiliar"><strong>CNS do responsavel</strong></label>
+							{% render_field form.cnsresponsavelFamiliar class+="form-control" %}
+					    </div>
+						<div class="col-sm-2">
+						    <label for="microarea"><strong>Micro area</strong></label>
+							{% render_field form.microarea class+="form-control" %}
+					    </div>
+					</div>
+					<div class="row">
+						<div class="col">
+						    <label for="nomeCompleto"><strong>Nome Completo</strong></label>
+							{% render_field form.nomeCompleto class+="form-control" %}
+					    </div>
+					</div>
+					<div class="row">
+						<div class="col-sm-5">
+						    <label for="nomeSocial"><strong>Nome Social</strong></label>
+							{% render_field form.nomeSocial class+="form-control" %}
+					    </div>
+						<div class="col-sm-3">
+						    <label for="dataNascimento"><strong>Data de Nascimento</strong></label>
+							{% render_field form.dataNascimento class+="form-control" %}
+					    </div>
+	-->
+				    </div>
+			    </div>
+			</div>
+		</div>
+
+        <center>
+			<br><br>
+			<button class="btn btn-primary">Salvar</button>
+			<a href="{% url 'index' %}"><button type="button" class="btn btn-danger">Cancelar</button></a>
+        </center>
 				
 	</form>
 

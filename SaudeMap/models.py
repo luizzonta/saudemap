@@ -27,6 +27,12 @@ class FichaDoenca(models.Model):
         null=True,
         blank=False
     )
+    cnsCidadao = models.CharField(
+        max_length=15,
+        null=True,
+        blank=False
+    )
+
 
 
     objetos = models.Manager()
