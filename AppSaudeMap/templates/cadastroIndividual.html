@@ -53,7 +53,7 @@
 				<div class="col-sm-3">
 				    <label for="ine"><strong>Data</strong></label>
 					<br>
-					{% render_field form.data class+="form-control" %}
+					{% render_field form.data class+="form-control" placeholder="dd/mm/yyyy" %}
 				</div>
 			</div>
 		</div>
@@ -61,15 +61,20 @@
 		<div class="container">
 			<div class="card">
 				<div class="card-header">
-			  		<h5>Identificacao do Usuario / Cidadao</h5>
+			  		<h5>Identificação do Usuário / Cidadão</h5>
 				</div>
 				<div class="card-body">
 					<div class="row">
 						<div class="col-sm-3">
-						    <label for="cnsCidadao"><strong>CNS do Cidadao</strong></label>
+						    <label for="cnsCidadao"><strong>CNS do Cidadão</strong></label>
 							{% render_field form.cnsCidadao class+="form-control" %}
 					    </div>
+					    
 <!--					    <div class="col-sm-3">
+							<strong>Responsavel familiar?</strong>
+							{% render_field form.field1 class+="form-control" %}
+					    </div>
+					    
 							<strong>Responsavel familiar?</strong>
 							<br><p></p>
 							<div class="custom-control custom-radio custom-control-inline">
@@ -80,15 +85,14 @@
 							  <input type="radio" class="custom-control-input" id="rf_nao">
 							  <label class="custom-control-label" for="rf_nao">Nao</label>
 							</div>
-							
-					    </div>
+-->							
 						<div class="col-sm-3">
-						    <label for="cnsresponsavelFamiliar"><strong>CNS do responsavel</strong></label>
-							{% render_field form.cnsresponsavelFamiliar class+="form-control" %}
+						    <label for="cnsresponsavelFamiliar"><strong>CNS do responsável</strong></label>
+							{% render_field form.cnsResponsavelFamiliar class+="form-control" %}
 					    </div>
 						<div class="col-sm-2">
-						    <label for="microarea"><strong>Micro area</strong></label>
-							{% render_field form.microarea class+="form-control" %}
+						    <label for="microarea"><strong>Micro área</strong></label>
+							{% render_field form.microArea class+="form-control" %}
 					    </div>
 					</div>
 					<div class="row">
@@ -104,9 +108,8 @@
 					    </div>
 						<div class="col-sm-3">
 						    <label for="dataNascimento"><strong>Data de Nascimento</strong></label>
-							{% render_field form.dataNascimento class+="form-control" %}
+							{% render_field form.dataNascimento class+="form-control" placeholder="dd/mm/yyyy" %}
 					    </div>
-	-->
 				    </div>
 			    </div>
 			</div>
