@@ -27,11 +27,6 @@ class FichaDoenca(models.Model):
         null=True,
         blank=False
     )
-    cnsCidadao = models.CharField(
-        max_length=15,
-        null=True,
-        blank=False
-    )
 
     cnsCidadao = models.CharField(
         max_length=15,
@@ -66,5 +61,12 @@ class FichaDoenca(models.Model):
         null=True,
         blank=False
     )    
-                
+         
+    OPCOES = (
+        ('Masculino', 'Masculino'),
+        ('Feminino', 'Feminino'),
+    )
+    
+    sexo = models.CharField(max_length=120, choices=OPCOES, blank=True, null=True)
+
     objetos = models.Manager()

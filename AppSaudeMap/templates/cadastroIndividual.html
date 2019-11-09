@@ -70,11 +70,17 @@
 							{% render_field form.cnsCidadao class+="form-control" %}
 					    </div>
 					    
-<!--					    <div class="col-sm-3">
-							<strong>Responsavel familiar?</strong>
-							{% render_field form.field1 class+="form-control" %}
-					    </div>
-					    
+					    <div class="col-sm-3">
+					       		<label for="sexo"><strong>Responsavel familiar?</strong></label>      
+								{% render_field form.sexo class+="form-control" %}
+				    	</div>
+<!--					    
+					       	{% for radio in form.sexo %}  
+					       		<label for="{{radio.id_for_label}}">      
+								{% render_field form.sexo class+="form-control" %}
+					       		</label>
+					       	{% endfor %}							
+
 							<strong>Responsavel familiar?</strong>
 							<br><p></p>
 							<div class="custom-control custom-radio custom-control-inline">
@@ -85,7 +91,10 @@
 							  <input type="radio" class="custom-control-input" id="rf_nao">
 							  <label class="custom-control-label" for="rf_nao">Nao</label>
 							</div>
+							
 -->							
+
+
 						<div class="col-sm-3">
 						    <label for="cnsresponsavelFamiliar"><strong>CNS do responsável</strong></label>
 							{% render_field form.cnsResponsavelFamiliar class+="form-control" %}
