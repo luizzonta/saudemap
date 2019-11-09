@@ -4,5 +4,5 @@ from SaudeMap.models import FichaDoenca
 
 urlpatterns = [
     path('',Index.as_view(), name="index"),
-    path('SaudeMap/cadastroIndividual', CadastroIndividual.as_view(model=FichaDoenca), name="cadastro_individual"),
+    path('saudemap/cadastroIndividual', CadastroIndividual.as_view(model=FichaDoenca), name="cadastro_individual"),
 ]
