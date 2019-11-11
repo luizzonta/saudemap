@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Lista Cadastro Individual{% endblock %}
+
+{% block conteudo %}
+
+{% load static %}
+
+	<div class="container">
+		<div class="row" >
+			<div class="col-sm-2">
+				<img class="img-fluid" class="img-thumbnail" src="{% static 'img/esus.jpg'%}" width="300" height="168" alt="Logotipo eSus">
+			</div>
+			<div class="col-sm-7">
+				<br>
+				<h1 class="text-center">
+					<p>Lista Cadastro Individual</p>
+				</h1>
+			</div>
+			<div class="col-sm-3">
+				<br>
+			</div>
+		</div>
+	</div>
+	<br>
+	<table class="table table-hover table-bordered">
+		<thead class="thead-dark">
+			<th>CNS Cidadão</th> 
+			<th>Nome Completo</th> 
+			<th>Data Nascimento</th> 
+			<th>Endereço</th> 
+			<th>Número</th> 
+			<th>Bairro</th> 
+			<th>Ação</th> 
+		</thead>
+	
+		<tbody>
+			{% for FichaDoencas in FichaDoenca %}	
+				<tr class="table-light">
+					<td>{{ FichaDoencas.cnsCidadao }}</td>
+					<td>{{ FichaDoencas.nomeCompleto }}</td> 
+					<td>{{ FichaDoencas.dataNascimento }}</td> 
+					<td>{{ FichaDoencas.endereco }}</td>
+					<td>{{ FichaDoencas.numero }}</td>
+					<td>{{ FichaDoencas.bairro }}</td>
+					<td>
+						<a href="{% url 'atualiza_cadastro_individual' pk=FichaDoencas.id %}"><img class="img-fluid" class="img-thumbnail" src="{% static 'img/edit.png'%}" width="25" height="25" alt="Atualizar"></a>
+						<a href="#"><img class="img-fluid" class="img-thumbnail" src="{% static 'img/excluir.png'%}" width="25" height="25" alt="Excluir"></a>
+						
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+ 
+	<a href="{% url 'cadastro_individual' %}"><button type="button" class="btn btn-primary">Adicionar Ficha</button></a>
+	<a href="{% url 'index' %}"><button type="button" class="btn btn-danger">Voltar</button></a>
+	<!--Endereço de icones: https://www.flaticon.com/-->
+
+{% endblock %}
