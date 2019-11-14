@@ -24,4 +24,9 @@ class AtualizaFichaIndividual(UpdateView):
     fields = '__all__'
     context_object_name = 'FichaDoenca'
     success_url = reverse_lazy("lista_cadastro_individual")
+
+class MapaFichaIndividual(ListView):
+    template_name = "mapaFichaIndividual.html"
+    model = FichaDoenca
+    context_object_name = 'FichaDoenca'
         

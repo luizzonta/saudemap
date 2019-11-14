@@ -1,6 +1,6 @@
 from django.urls import path
 from AppSaudeMap.views import Index, CadastroIndividual, ListaFichaIndividual,\
-    AtualizaFichaIndividual
+    AtualizaFichaIndividual, MapaFichaIndividual
 from SaudeMap.models import FichaDoenca
 
 urlpatterns = [
@@ -8,4 +8,5 @@ urlpatterns = [
     path('saudemap/', ListaFichaIndividual.as_view(), name='lista_cadastro_individual'),
     path('saudemap/cadastroIndividual', CadastroIndividual.as_view(model=FichaDoenca), name="cadastro_individual"),
     path('saudemap/<pk>', AtualizaFichaIndividual.as_view(model=FichaDoenca), name="atualiza_cadastro_individual"),
+    path('saudemap/saudemap/mapa', MapaFichaIndividual.as_view(model=FichaDoenca), name='mapa_cadastro_individual'),
 ]

@@ -240,18 +240,15 @@ class FichaDoenca(models.Model):
     )
     plantasMedicinais = models.CharField(max_length=3, choices=OPCOES_PLANTAS_MEDICINAIS, blank=True, null=True)
 
-    latitude = models.DecimalField(
-        max_digits=10,
-        decimal_places=8,
+    latitude = models.CharField(
+        max_length=255,
         null=True,
         blank=False
     )    
-    longitude = models.DecimalField(
-        max_digits=11,
-        decimal_places=8,
+    longitude = models.CharField(
+        max_length=255,
         null=True,
         blank=False
     )    
-
 
     objetos = models.Manager()

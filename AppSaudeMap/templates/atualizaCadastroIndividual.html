@@ -159,13 +159,14 @@
 							-->
 						    <script  type="text/javascript">
 						      function geocodeAddress() {
-								var address = 'Rua Finlândia, 105, Fraiburgo';
+						    	var address = document.getElementById("id_endereco").value + ',' + document.getElementById("id_numero").value + ',' + document.getElementById("id_cidade").value;  
 								var geocoder = new google.maps.Geocoder();
 						        geocoder.geocode({'address': address}, function(results, status) {
 						          if (status === 'OK') {
 					                var lat = "" + results[0].geometry.location.lat();
 					                var lng = "" + results[0].geometry.location.lng();
-						            alert(lat + ' / ' + lng);
+					                document.getElementById('id_latitude').value = lat;
+					                document.getElementById('id_longitude').value = lng;
 						          } else {
 						            alert('Geocode não encontrado: ' + status);
 						          }

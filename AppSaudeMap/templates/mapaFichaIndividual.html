@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Mapeamento Doenças{% endblock %}
+
+{% block conteudo %}
+
+{% load static %}
+
+	<div class="container">
+		<div class="row" >
+			<div class="col-sm-2">
+				<img class="img-fluid" class="img-thumbnail" src="{% static 'img/esus.jpg'%}" width="300" height="168" alt="Logotipo eSus">
+			</div>
+			<div class="col-sm-7">
+				<br>
+				<h1 class="text-center">
+					<p>Mapeamento Doenças</p>
+				</h1>
+			</div>
+			<div class="col-sm-3">
+				<br>
+			</div>
+		</div>
+	</div>
+	<br>
+ 
+    <script>
+		const sqlite3 = require('sqlite3').verbose();
+		 
+		// open the database
+		let db = new sqlite3.Database('/db.sqlite3');
+		 
+		let sql = 'SELECT * FROM SaudeMap_fichadoenca ORDER BY nomeCompleto';
+
+		db.all(sql, [], (err, rows) => {
+		  if (err) {
+		    throw err;
+		  }
+		  rows.forEach((row) => {
+		    console.log(row.nomeCompleto);
+		  });
+		});
+	 
+		// close the database connection
+		db.close();
+	</script>
+ 
+      <script>
+         function loadMap() {
+            var mapOptions = {
+               center:new google.maps.LatLng(-27.0316573, -50.9082924),
+               zoom:15
+            }
+            
+            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+            
+            var marker = new google.maps.Marker({
+               position: new google.maps.LatLng(-27.0357500, -50.9089900),
+               map: map,
+               draggable:true,
+               icon:'write.png',
+            });
+            marker.setMap(map);
+
+            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+            
+            var marker = new google.maps.Marker({
+               position: new google.maps.LatLng(-27.0347500, -50.9049900),
+               map: map,
+               draggable:true,
+               icon:'/static/img/blue.png',
+            });
+            marker.setMap(map);
+
+         }
+      </script>
+      
+	   <body onload = "loadMap()">
+	      <div id = "sample" style = "width:780px; height:600px;" align="center"></div>
+	   </body>
+	   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsg5LPmELH07eibxjKD891fOi-ENsxW_E" type="text/javascript"></script>
+	<br>
+	<a href="{% url 'cadastro_individual' %}"><button type="button" class="btn btn-primary">Adicionar Ficha</button></a>
+	<a href="{% url 'index' %}"><button type="button" class="btn btn-danger">Voltar</button></a>
+
+<!-- Exemplo em javascript com SQLite: https://www.youtube.com/watch?v=7znA5k7gJqQ -->
+ 
+{% endblock %}
