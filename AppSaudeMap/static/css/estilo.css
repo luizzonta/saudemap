@@ -11,7 +11,8 @@ h3 {
 }
 
 h4 {
-	color: #ef2929;
+/*	color: #ef2929;*/
+	font-weight: bold;
 }
 
 h5 {

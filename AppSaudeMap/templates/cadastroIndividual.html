@@ -121,7 +121,7 @@
 					    </div>
 						<div class="col-sm-3">
 						    <label for="celular"><strong>Telefone Celular</strong></label>
-							{% render_field form.telefoneCelular class+="form-control" %}
+							{% render_field form.telefoneCelular class+="form-control" placeholder="(xx) xxxxx-xxxx" %}
 					    </div>
 						<div class="col-sm-6">
 						    <label for="email"><strong>E-mail</strong></label>
@@ -344,11 +344,11 @@
 			</div>
 		</div>
 
-        <center>
-			<br><br>
+		<br>
+		<div class="container">
 			<button class="btn btn-primary">Salvar</button>
 			<a href="{% url 'lista_cadastro_individual' %}"><button type="button" class="btn btn-danger">Cancelar</button></a>
-        </center>
+		</div>
 				
 	</form>
 

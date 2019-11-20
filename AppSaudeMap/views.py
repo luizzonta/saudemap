@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from SaudeMap.models import FichaDoenca
 from django.urls.base import reverse_lazy
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 
 class Index(TemplateView):
@@ -29,4 +29,9 @@ class MapaFichaIndividual(ListView):
     template_name = "mapaFichaIndividual.html"
     model = FichaDoenca
     context_object_name = 'FichaDoenca'
-        
+
+class DeletaFichaIndividual(DeleteView):
+    template_name = "excluiFichaIndividual.html"
+    model = FichaDoenca()
+    context_object_name = 'FichaDoenca'
+    success_url = reverse_lazy("lista_cadastro_individual")        

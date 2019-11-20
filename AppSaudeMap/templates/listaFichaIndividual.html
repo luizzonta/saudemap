@@ -45,7 +45,7 @@
 					<td>{{ FichaDoencas.bairro }}</td>
 					<td>
 						<a href="{% url 'atualiza_cadastro_individual' pk=FichaDoencas.id %}"><img class="img-fluid" class="img-thumbnail" src="{% static 'img/edit.png'%}" width="25" height="25" alt="Atualizar"></a>
-						<a href="#"><img class="img-fluid" class="img-thumbnail" src="{% static 'img/excluir.png'%}" width="25" height="25" alt="Excluir"></a>
+						<a href="{% url 'deleta_cadastro_individual' pk=FichaDoencas.id %}"><img class="img-fluid" class="img-thumbnail" src="{% static 'img/excluir.png'%}" width="25" height="25" alt="Excluir"></a>
 						
 					</td>
 				</tr>
