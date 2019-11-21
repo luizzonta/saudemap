@@ -177,7 +177,7 @@
 						    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsg5LPmELH07eibxjKD891fOi-ENsxW_E&callback=initMap">
 						    </script>
 
-							<button type="button" class="btn btn-info" OnClick="geocodeAddress()" >Buscar coordenadas</button>
+							<button type="button" class="btn btn-info" OnClick="geocodeAddress()"><i class="fa fa-download"></i> Buscar coordenadas</button>
 					    </div>
 						<div class="col-sm-3">
 						    <label for="latitude"><strong>Latitude</strong></label>
@@ -346,8 +346,8 @@
 
 		<br>
 		<div class="container">
-			<button class="btn btn-primary">Salvar</button>
-			<a href="{% url 'lista_cadastro_individual' %}"><button type="button" class="btn btn-danger">Cancelar</button></a>
+			<button class="btn btn-primary"><i class="fa fa-save"></i> Salvar</button>
+			<a href="{% url 'lista_cadastro_individual' %}"><button type="button" class="btn btn-danger"><i class="fa fa-close"></i> Cancelar</button></a>
 		</div>
 				
 	</form>

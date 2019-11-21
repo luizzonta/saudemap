@@ -44,17 +44,16 @@
 					<td>{{ FichaDoencas.numero }}</td>
 					<td>{{ FichaDoencas.bairro }}</td>
 					<td>
-						<a href="{% url 'atualiza_cadastro_individual' pk=FichaDoencas.id %}"><img class="img-fluid" class="img-thumbnail" src="{% static 'img/edit.png'%}" width="25" height="25" alt="Atualizar"></a>
-						<a href="{% url 'deleta_cadastro_individual' pk=FichaDoencas.id %}"><img class="img-fluid" class="img-thumbnail" src="{% static 'img/excluir.png'%}" width="25" height="25" alt="Excluir"></a>
-						
+						<a href="{% url 'atualiza_cadastro_individual' pk=FichaDoencas.id %}"><i class="fa fa-edit" style="font-size:30px;color:blue" alt="Atualizar"></i></a>
+						<a href="{% url 'deleta_cadastro_individual' pk=FichaDoencas.id %}"><i class="fa fa-trash-o" style="font-size:30px;color:red" alt="Excluir"></i></a>
 					</td>
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
  
-	<a href="{% url 'cadastro_individual' %}"><button type="button" class="btn btn-primary">Adicionar Ficha</button></a>
-	<a href="{% url 'index' %}"><button type="button" class="btn btn-danger">Voltar</button></a>
+	<a href="{% url 'cadastro_individual' %}"><button type="button" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Adicionar Ficha</button></a>
+	<a href="{% url 'index' %}"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left"></i> Voltar</button></a>
 	<!--Endereço de icones: https://www.flaticon.com/-->
 
 {% endblock %}

@@ -22,63 +22,58 @@
 			</div>
 		</div>
 	</div>
-	<br>
  
-    <script>
-		const sqlite3 = require('sqlite3').verbose();
-		 
-		// open the database
-		let db = new sqlite3.Database('/db.sqlite3');
-		 
-		let sql = 'SELECT * FROM SaudeMap_fichadoenca ORDER BY nomeCompleto';
+	<div class="container">
+		<div class="row" >
+			<div class="col-sm-2">
+				<h4 class="text-center">
+					<br>
+					<p>Menu Seleção</p>
+					<p>Menu Seleção</p>
+					<p>Menu Seleção</p>
+					<p>Menu Seleção</p>
+					<p>Menu Seleção</p>
+					<p>Menu Seleção</p>
+				<h4 class="text-center">
+			</div>
+			<div class="col-sm-10">
+				<script>
+			         function loadMap() {
+			            var mapOptions = {
+			               center:new google.maps.LatLng(-27.0316573, -50.9082924),
+			               zoom:15
+			            }
+			            
+			            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+			            
+			            var marker = new google.maps.Marker({
+			               position: new google.maps.LatLng(-27.0357500, -50.9089900),
+			               map: map,
+			               draggable:true,
+			               icon:'write.png',
+			            });
+			            marker.setMap(map);
+			
+			            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+			            
+			            var marker = new google.maps.Marker({
+			               position: new google.maps.LatLng(-27.0347500, -50.9049900),
+			               map: map,
+			               draggable:true,
+			               icon:'/static/img/blue.png',
+			            });
+			            marker.setMap(map);
+			
+			         }
+				</script>
+				<body onload = "loadMap()">
+				   <div id = "sample" style = "width:780px; height:600px;" align="center"></div>
+				</body>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsg5LPmELH07eibxjKD891fOi-ENsxW_E" type="text/javascript"></script>
+			</div>
+		</div>
+	</div>
 
-		db.all(sql, [], (err, rows) => {
-		  if (err) {
-		    throw err;
-		  }
-		  rows.forEach((row) => {
-		    console.log(row.nomeCompleto);
-		  });
-		});
-	 
-		// close the database connection
-		db.close();
-	</script>
- 
-      <script>
-         function loadMap() {
-            var mapOptions = {
-               center:new google.maps.LatLng(-27.0316573, -50.9082924),
-               zoom:15
-            }
-            
-            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
-            
-            var marker = new google.maps.Marker({
-               position: new google.maps.LatLng(-27.0357500, -50.9089900),
-               map: map,
-               draggable:true,
-               icon:'write.png',
-            });
-            marker.setMap(map);
-
-            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
-            
-            var marker = new google.maps.Marker({
-               position: new google.maps.LatLng(-27.0347500, -50.9049900),
-               map: map,
-               draggable:true,
-               icon:'/static/img/blue.png',
-            });
-            marker.setMap(map);
-
-         }
-      </script>
-      
-	   <body onload = "loadMap()">
-	      <div id = "sample" style = "width:780px; height:600px;" align="center"></div>
-	   </body>
-	   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsg5LPmELH07eibxjKD891fOi-ENsxW_E" type="text/javascript"></script>
 	<br>
 	<a href="{% url 'cadastro_individual' %}"><button type="button" class="btn btn-primary">Adicionar Ficha</button></a>
 	<a href="{% url 'index' %}"><button type="button" class="btn btn-danger">Voltar</button></a>
