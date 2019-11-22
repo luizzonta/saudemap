@@ -1,17 +1,22 @@
 {% extends "base.html" %}
 
+
+
 {% block title %}Mapeamento Doenças{% endblock %}
 
 {% block conteudo %}
 
 {% load static %}
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsg5LPmELH07eibxjKD891fOi-ENsxW_E" type="text/javascript"></script>
+	<script src="http://cdn.sobekrepository.org/includes/gmaps-markerwithlabel/1.9.1/gmaps-markerwithlabel-1.9.1.js" type="text/javascript"></script>
+
 	<div class="container">
 		<div class="row" >
 			<div class="col-sm-2">
-				<img class="img-fluid" class="img-thumbnail" src="{% static 'img/esus.jpg'%}" width="300" height="168" alt="Logotipo eSus">
+				<img class="img-fluid" class="img-thumbnail" src="{% static 'img/esus.jpg'%}" width="300" height="168" alt="Logotipo eSus"> 
 			</div>
-			<div class="col-sm-7">
+			<div class="col-sm-10">
 				<br>
 				<h1 class="text-center">
 					<p>Mapeamento Doenças</p>
@@ -25,18 +30,149 @@
  
 	<div class="container">
 		<div class="row" >
-			<div class="col-sm-2">
-				<h4 class="text-center">
+			<div class="col-sm-3">
+				<br>
+				<form>
+					<div class="form-check">
+					<h6>	
+					    <input type="checkbox" class="form-check-input" id="hipertensaoArterial">
+					    <label class="form-check-label" for="hipertensaoArterial">Hipertensão Arterial</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="diabetes">
+					    <label class="form-check-label" for="diabetes">Diabetes</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="avcDerrame">
+					    <label class="form-check-label" for="avcDerrame">AVC/Derrame</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="infarto">
+					    <label class="form-check-label" for="infarto">Infarto</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="doencaCardiaca">
+					    <label class="form-check-label" for="doencaCardiaca">Cardiaca/coração</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+						<br>
+					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
+					</h6>
+					</div>
 					<br>
-					<p>Menu Seleção</p>
-					<p>Menu Seleção</p>
-					<p>Menu Seleção</p>
-					<p>Menu Seleção</p>
-					<p>Menu Seleção</p>
-					<p>Menu Seleção</p>
-				<h4 class="text-center">
+					<a href="#"><button type="button" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Enviar</button></a>
+					<a href="{% url 'index' %}"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left"></i> Voltar</button></a>
+
+				</form>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
+				<div id="map"></div>
+				<script>
+				 function initMap() {
+				   var bp = {lat: -27.031, lng: -50.908};
+				   var map = new google.maps.Map(document.getElementById('map'), {
+				     zoom: 15,
+				     center: bp
+				   });
+				   var locations = [
+				     ['Diabetes', -27.0316573, -50.9082924, 'green', 20, -3],
+				     ['Cardíaco', -27.0312853, -50.9092123, 'red', -10, 20],
+				     ['Hipersão', -27.0317342, -50.9091592, 'blue', 23, -3],
+				     ['Câncer', -27.0320639, -50.9089178, 'yellow', 23, -3],
+				     ['Cardíaco', -27.0323936, -50.9088534, 'red', 23, -3],
+				     ['Câncer', -27.0521550, -50.9353690, 'yellow', 37, -3],
+				     ['Câncer', -27.0531550, -50.9363690, 'yellow', -10, 20],
+				     ['Tuberculose', -27.0541550, -50.9362690, 'pink', 20, -3],
+				     ['Diabetes', -27.0545550, -50.9355690, 'green', 20, -3],
+				     ['Tuberculose', -27.0532550, -50.9342690, 'pink', 23, -3],
+				     ['Tuberculose', -27.0533650, -50.9339690, 'pink', 10, -3],
+				     ['Cardíaco', -27.0534250, -50.9345690, 'red', -10, 15],
+				     ['Diabetes', -27.0535550, -50.9399690, 'green', 20, -3],
+				     ['Câncer', -27.0549550, -50.9341590, 'yellow', 25, 50],
+				     ['Câncer', -27.0535650, -50.9341890, 'yellow', 45, -5],
+				     ['Hipersão', -27.0538850, -50.9342690, 'blue', 40, 45]
+				
+				   ]; 
+				   var icons = {
+				     'green': {
+				       url: '/static/img/green.png',
+				       color: '#58D400'
+				     },
+				     'yellow': {
+				       url: '/static/img/yellow.png',
+				       color: '#FCCA00'
+				     },
+				     'red': {
+				       url: '/static/img/red.png',
+				       color: '#D80027'
+				     },
+				     'pink': {
+				       url: '/static/img/pink.png',
+				       color: '#FF69B4'
+				     },
+				     'blue': {
+				       url: '/static/img/blue.png',
+				       color: '#0000FF'
+				     }
+				   };
+				   var image = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+				   for (var i = 0; i < locations.length; i++) {
+				     var item = locations[i];
+				     var marker = new MarkerWithLabel({
+				       position: {lat: item[1], lng: item[2]},
+				       map: map,
+				       icon: icons[item[3]].url,
+				       labelAnchor: new google.maps.Point(item[4], item[5]),
+				     });
+				   }
+				 }
+				initMap();
+				</script>
+			
+<!--
 				<script>
 			         function loadMap() {
 			            var mapOptions = {
@@ -47,20 +183,20 @@
 			            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
 			            
 			            var marker = new google.maps.Marker({
-			               position: new google.maps.LatLng(-27.0357500, -50.9089900),
+			               position: new google.maps.LatLng(-27.0387500, -50.9069900),
 			               map: map,
 			               draggable:true,
-			               icon:'write.png',
+			               icon:'/static/img/blue.png',
 			            });
 			            marker.setMap(map);
 			
 			            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
 			            
 			            var marker = new google.maps.Marker({
-			               position: new google.maps.LatLng(-27.0347500, -50.9049900),
+			               position: new google.maps.LatLng(-27.0347500, -50.9069900),
 			               map: map,
 			               draggable:true,
-			               icon:'/static/img/blue.png',
+			               icon:'/static/img/red.png',
 			            });
 			            marker.setMap(map);
 			
@@ -69,14 +205,12 @@
 				<body onload = "loadMap()">
 				   <div id = "sample" style = "width:780px; height:600px;" align="center"></div>
 				</body>
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsg5LPmELH07eibxjKD891fOi-ENsxW_E" type="text/javascript"></script>
+-->							
+
 			</div>
 		</div>
 	</div>
 
-	<br>
-	<a href="{% url 'cadastro_individual' %}"><button type="button" class="btn btn-primary">Adicionar Ficha</button></a>
-	<a href="{% url 'index' %}"><button type="button" class="btn btn-danger">Voltar</button></a>
 
 <!-- Exemplo em javascript com SQLite: https://www.youtube.com/watch?v=7znA5k7gJqQ -->
  

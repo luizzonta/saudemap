@@ -16,8 +16,19 @@ h4 {
 }
 
 h5 {
-	color: #3e18f0;
+/*	color: #3e18f0;*/
 	font-weight: bold;
+}
+
+h6 {
+	color: #2d10b3;
+	font-weight: bold;
+}
+
+h6.hipertensaoArterial{
+	color: coral;
+	font-weight: bold;
+	background-color: coral;
 }
 
 tr, th,td 
