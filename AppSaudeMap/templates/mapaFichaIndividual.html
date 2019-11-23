@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 
-
-
 {% block title %}Mapeamento Doenças{% endblock %}
 
 {% block conteudo %}
@@ -35,6 +33,10 @@
 				<form>
 					<div class="form-check">
 					<h6>	
+						{% for FichaDoencas in FichaDoenca %}	
+							<p>{{ FichaDoencas.nomeCompleto }}</p> 
+						{% endfor %}
+
 					    <input type="checkbox" class="form-check-input" id="hipertensaoArterial">
 					    <label class="form-check-label" for="hipertensaoArterial">Hipertensão Arterial</label>
 						<br>

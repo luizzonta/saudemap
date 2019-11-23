@@ -3,6 +3,7 @@ from SaudeMap.models import FichaDoenca
 from django.urls.base import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
+import json
 
 class Index(TemplateView):
     template_name = "index.html"
@@ -35,3 +36,22 @@ class DeletaFichaIndividual(DeleteView):
     model = FichaDoenca()
     context_object_name = 'FichaDoenca'
     success_url = reverse_lazy("lista_cadastro_individual")        
+    
+#http://prettyprinted.com/l/Log
+#https://pt.stackoverflow.com/questions/236017/exportando-dados-em-json-ou-txt-no-python    
+'''
+def escrever_json(lista):
+    with open('meu_arquivo.json', 'w') as f:
+        json.dump(lista, f)
+
+def carregar_json(arquivo):
+    with open('meu_arquivo.json', 'r') as f:
+        return json.load(f)
+
+minha_lista = ['João', 'Maria', 'José']
+escrever_json(minha_lista)
+
+'''
+#https://stackoverflow.com/questions/2428092/creating-a-json-response-using-django-and-python
+#https://pypi.org/project/django-json-field/    
+    
