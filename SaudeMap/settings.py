@@ -26,8 +26,8 @@ SECRET_KEY = 'c#e^8-73rwh3^37f2zqnjo*1cqoddiw3!kks-y5dj-4r1p0b!s'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-#    'localhost',
-#    'saudemap.herokuapp.com'
+    'localhost',
+    'saudemap.herokuapp.com'
 ]
 
 # Application definition
@@ -122,7 +122,7 @@ USE_TZ = True
 
 DEFAULT_CHARSET="iso-8859-1"
 
-# Static files (CSS, JavaScript, Images)
+#Static files (CSS, JavaScript, Images)
 #https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
