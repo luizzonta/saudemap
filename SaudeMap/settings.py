@@ -25,8 +25,15 @@ SECRET_KEY = 'c#e^8-73rwh3^37f2zqnjo*1cqoddiw3!kks-y5dj-4r1p0b!s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 
 ALLOWED_HOSTS = ['192.168.0.101', 'saudemap.herokuapp.com', 'localhost', '127.0.0.1', '[::1]']
+=======
+ALLOWED_HOSTS = [
+#    'localhost',
+#    'saudemap.herokuapp.com'
+]
+>>>>>>> 9a5fbeed6fa948095b10494375059873a1880550
 
 # Application definition
 
