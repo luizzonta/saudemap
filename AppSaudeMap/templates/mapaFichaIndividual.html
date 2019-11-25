@@ -34,7 +34,30 @@
 					<div class="form-check">
 					<h6>	
 					
-					
+						<script type="text/javascript">  
+							window.addEventListener('load' carregado);
+							var db = openDatabase("db.sqlite3", "3.2.1", "Ficha Doenca", 2 * 1024 * 1024);
+
+							function carregado(){    
+							    
+							    document.getElementById('btn-salvar').addEventListener('click', salvar);
+							    document.getElementById('btn-deletar').addEventListener('click', deletar);
+							    
+							    mostrar();
+							    
+							}  
+
+							function mostrar(){  
+							var someVar = [ document.getElementById("myvar").innerHTML];
+							document.getElementById("demo").innerHTML = someVar;
+							}  
+
+						
+						</script>  
+				
+		                <div class="per"><a id="btn-salvar" class="button" >SALVAR</a></div>
+
+						
 					    <input type="checkbox" class="form-check-input" id="hipertensaoArterial">
 					    <label class="form-check-label" for="hipertensaoArterial">Hipertensão Arterial</label>
 						<br>
