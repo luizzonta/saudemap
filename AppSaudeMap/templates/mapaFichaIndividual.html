@@ -33,13 +33,10 @@
 				<form>
 					<div class="form-check">
 					<h6>	
-					
-
-						
-					    <input type="checkbox" class="form-check-input" id="hipertensaoArterial">
+					    <input type="checkbox" class="form-check-input" id="hipertensaoArterial" OnClick="initMap()">
 					    <label class="form-check-label" for="hipertensaoArterial">Hipertensão Arterial</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="diabetes">
+					    <input type="checkbox" class="form-check-input" id="diabetes" OnClick="initMap()">
 					    <label class="form-check-label" for="diabetes">Diabetes</label>
 						<br>
 					    <input type="checkbox" class="form-check-input" id="avcDerrame">
@@ -112,58 +109,63 @@
 			<div class="col-sm-9">
 				<div id="map"></div>
 				<script>
-				 function initMap() {
-				   var bp = {lat: -27.031, lng: -50.908};
-				   var map = new google.maps.Map(document.getElementById('map'), {
-				     zoom: 15,
-				     center: bp
-				   });
-				   var locations = [
-				     ['Diabetes', -27.0316573, -50.9082924, 'green', 20, -3],
-				     ['Cardíaco', -27.0312853, -50.9092123, 'red', -10, 20],
-				     ['Hipersão', -27.0317342, -50.9091592, 'blue', 23, -3],
-				     ['Câncer', -27.0320639, -50.9089178, 'yellow', 23, -3],
-				     ['Cardíaco', -27.0323936, -50.9088534, 'red', 23, -3],
-				     ['Câncer', -27.0521550, -50.9353690, 'yellow', 37, -3],
-				     ['Câncer', -27.0531550, -50.9363690, 'yellow', -10, 20],
-				     ['Tuberculose', -27.0541550, -50.9362690, 'pink', 20, -3],
-				     ['Diabetes', -27.0545550, -50.9355690, 'green', 20, -3],
-				     ['Tuberculose', -27.0532550, -50.9342690, 'pink', 23, -3],
-				     ['Tuberculose', -27.0533650, -50.9339690, 'pink', 10, -3],
-				     ['Cardíaco', -27.0534250, -50.9345690, 'red', -10, 15],
-				     ['Diabetes', -27.0535550, -50.9399690, 'green', 20, -3],
-				     ['Câncer', -27.0549550, -50.9341590, 'yellow', 25, 50],
-				     ['Câncer', -27.0535650, -50.9341890, 'yellow', 45, -5],
-				     ['Hipersão', -27.0538850, -50.9342690, 'blue', 40, 45]
-				
-				   ]; 
+				function initMap() {
+					var bp = {lat: -27.031, lng: -50.908};
+					var map = new google.maps.Map(document.getElementById('map'), {
+				    zoom: 15,
+				    center: bp
+				});
+			
+				var checkBox = document.getElementById("hipertensaoArterial");
+				if (checkBox.checked == true){
+					var locations = [
+						{% for FichaDoencas in FichaDoenca %}
+							{% if FichaDoencas.hipertensaoArterial == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'green', 1, -1],
+							{% endif %}
+						{% endfor %}
+						];
+					}
+					
+				var checkBox1 = document.getElementById("diabetes");
+				if (checkBox1.checked == true){
+					var locations = [
+						{% for FichaDoencas in FichaDoenca %}
+							{% if FichaDoencas.diabetes == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'red', 2, -2],
+							{% endif %}
+						{% endfor %}
+						];
+					}
+					
+						
 				   var icons = {
 				     'green': {
-				    	 url: "{% static 'img/green.png'%}",
-				    	 color: '#58D400'
+				       url: '/static/img/green.png',
+				       color: '#58D400'
 				     },
 				     'yellow': {
-				    	 url: "{% static 'img/yellow.png'%}",
-				    	 color: '#FCCA00'
+				       url: '/static/img/yellow.png',
+				       color: '#FCCA00'
 				     },
 				     'red': {
-				    	 url: "{% static 'img/red.png'%}",
-				    	 color: '#D80027'
+				       url: '/static/img/red.png',
+				       color: '#D80027'
 				     },
 				     'pink': {
-				    	 url: "{% static 'img/pink.png'%}",
-				    	 color: '#FF69B4'
+				       url: '/static/img/pink.png',
+				       color: '#FF69B4'
 				     },
 				     'blue': {
-				    	 url: "{% static 'img/blue.png'%}",
-				    	 color: '#0000FF'
+				       url: '/static/img/blue.png',
+				       color: '#0000FF'
 				     }
 				   };
 				   var image = 'https://fonts.googleapis.com/icon?family=Material+Icons';
 				   for (var i = 0; i < locations.length; i++) {
 				     var item = locations[i];
 				     var marker = new MarkerWithLabel({
-				       position: {lat: item[1], lng: item[2]},
+				       position: {lat: item[1] + item[4]/100000, lng: item[2] + item[5]/100000},
 				       map: map,
 				       icon: icons[item[3]].url,
 				       labelAnchor: new google.maps.Point(item[4], item[5]),
@@ -171,8 +173,9 @@
 				   }
 				 }
 				initMap();
+				
 				</script>
-			
+
 <!--
 				<script>
 			         function loadMap() {
