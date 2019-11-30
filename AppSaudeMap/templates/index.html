@@ -9,15 +9,14 @@
 	<div class="containerTitulo">
 		<p>Olá {{ user.username }}! Seja bem vindo!!!</p>
 		<center>
-			<br>
 			<h2>Sistema Controle Doenças Crônicas
 			<br>
 			</h2>
 		</center>
-		<img class="img-fluid" class="img-thumbnail" src="/static/img/map_top.png" width="1024" height="600" alt="Mapa Doencas Cronicas">
+		<img class="img-fluid" class="img-thumbnail" src="/static/img/map_top.png" width="600" height="480" alt="Mapa Doencas Cronicas">
 <!--		<img class="img-fluid" class="img-thumbnail" src="{% static 'img/map_top.png'%}" width="1024" height="600" alt="Mapa Doencas Cronicas">-->
 	</div>	
-	<br><br>	
+	<br>
 	<div class="containerTitulo">
 		<div class="row" >
 			<div class="col-sm">
@@ -34,7 +33,7 @@
 			<div class="col-sm">
 				<div class="p-3 mb-2 bg-primary text-white">
 					<h4 class="text-center">
-					    <p><a href="{% url 'lista_cadastro_individual' %}"><button type="button" class="btn btn-primary">Ficha Cadastro Saude</button></a></p>
+					    <p><a href="{% url 'lista_cadastro_individual' %}"><button type="button" class="btn btn-primary">Ficha Cadastro Individual</button></a></p>
 					</h4>
 				</div>
 			</div>
@@ -58,7 +57,7 @@
 			<div class="col-sm">
 				<div class="p-3 mb-2 bg-primary text-white">
 					<h4 class="text-center">
-						<button type="button" class="btn btn-primary">Visualizar Gráficos</button>
+					    <p><a href="{% url 'grafico_cadastro_individual' %}"><button type="button" class="btn btn-primary">Visualizar Gráficos</button></a></p>
 					</h4>
 				</div>
 			</div>
@@ -68,7 +67,7 @@
 			</div>
 		</div>	  
 	</div>
-	<br><br>
+	<br>
 	<center>	
 		<a href="{% url 'logout' %}"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left"></i> Sair</button></a>
 	</center>

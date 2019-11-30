@@ -1,6 +1,7 @@
 from django.urls import path
 from AppSaudeMap.views import Index, CadastroIndividual, ListaFichaIndividual,\
-    AtualizaFichaIndividual, MapaFichaIndividual, DeletaFichaIndividual 
+    AtualizaFichaIndividual, MapaFichaIndividual, DeletaFichaIndividual ,\
+    GraficoFichaIndividual
 from SaudeMap.models import FichaDoenca
 
 urlpatterns = [
@@ -10,5 +11,5 @@ urlpatterns = [
     path('saudemap/<pk>', AtualizaFichaIndividual.as_view(model=FichaDoenca), name="atualiza_cadastro_individual"),
     path('saudemap/saudemap/mapa', MapaFichaIndividual.as_view(model=FichaDoenca), name='mapa_cadastro_individual'),
     path('saudemap/excluir/<pk>', DeletaFichaIndividual.as_view(model=FichaDoenca), name="deleta_cadastro_individual"),
-#    path('saudemap/', escrever_json(model=FichaDoenca), name='gera_json'),
+    path('saudemap/saudemap/grafico', GraficoFichaIndividual.as_view(model=FichaDoenca), name='grafico_cadastro_individual'),
 ]

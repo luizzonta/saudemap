@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}Mapeamento Doenças{% endblock %}
+
+{% block conteudo %}
+
+{% load static %}
+
+ 
+	<script src= "https://code.highcharts.com/highcharts.src.js" ></script>
+ 
+	<div class="container">
+		<div class="row" >
+			<div class="col-sm-2">
+				<img class="img-fluid" class="img-thumbnail" src="{% static 'img/esus.jpg'%}" width="200" height="128" alt="Logotipo eSus"> 
+			</div>
+			<div class="col-sm-10">
+				<h1 class="text-center">
+					<h2>Gráfico Mapeamento Doenças Crônicas</h2>
+				</h1>
+			</div>
+			<div class="col-sm-3">
+			</div>
+		</div>
+	</div>
+ 
+	<div class="container">
+		<div class="row" >
+			<div class="col-sm-3">
+				<br>
+				<form>
+					<div class="form-check">
+					<h6>	
+					
+	<input type="radio" name="grafico" class="form-check-input" id="hipertensaoArterial" OnClick="initGrafico()" value="hipertensaoArterial"> Hipertensão Arterial<br>					
+	<input type="radio" name="grafico" class="form-check-input" id="diabetes" OnClick="initGrafico()" value="diabetes"> Diabetes<br>					
+	
+	<input type="checkbox" class="form-check-input" id="hipertensaoArterial" OnClick="initMap()">
+	<label class="form-check-label" for="hipertensaoArterial">Hipertensão Arterial</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="diabetes" OnClick="initMap()">
+	<label class="form-check-label" for="diabetes">Diabetes</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="avcDerrame" OnClick="initMap()">
+	<label class="form-check-label" for="avcDerrame">AVC/Derrame</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="infarto" OnClick="initMap()">
+	<label class="form-check-label" for="infarto">Infarto</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="doencaCardiaca" OnClick="initMap()">
+	<label class="form-check-label" for="doencaCardiaca">Cardiaca/coração</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="problemaRins" OnClick="initMap()">
+	<label class="form-check-label" for="problemaRins">Problema Rins</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="hensaniase" OnClick="initMap()">
+	<label class="form-check-label" for="hensaniase">Hanseníase</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="cancer" OnClick="initMap()">
+	<label class="form-check-label" for="cancer">Câncer</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="saudeMental" OnClick="initMap()">
+	<label class="form-check-label" for="saudeMental">Problema Saúde Mental</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="internacao" OnClick="initMap()">
+	<label class="form-check-label" for="internacao">Teve Alguma Internação</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="acamado" OnClick="initMap()">
+	<label class="form-check-label" for="acamado">Está Acamado</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="doencaRespiratoria" OnClick="initMap()">
+	<label class="form-check-label" for="doencaRespiratoria">Doença Respiratória</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="gestante" OnClick="initMap()">
+	<label class="form-check-label" for="gestante">Está Gestante</label>
+	<br>
+	<input type="checkbox" class="form-check-input" id="fumante" OnClick="initMap()">
+	<label class="form-check-label" for="fumante">É Fumante</label>
+						<br>
+					</h6>
+					</div>
+					<br>
+					<a href="{% url 'index' %}"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left"></i> Voltar</button></a>
+					<br><br><br><br><br><br><br><br>
+
+				</form>
+			</div>
+			<div class="col-sm-9">
+				<div id="container"></div>
+				<script src="https://code.highcharts.com/highcharts.src.js"></script>
+				<script>
+					function initGrafico() {
+						Highcharts.chart('container', {
+					    	chart: {
+					        	type: 'column'
+					        },
+					        title: {
+					            text: 'Tipo Doença: '
+					        },
+					        xAxis: {
+					            categories: ['Diabete']
+					        },
+					        series: [{
+					            name: 'Sim',
+					            data: [107],
+	          					color: 'red'
+					        }, {
+					            name: 'Não',
+					            data: [1052],
+	          					color: 'green'
+					        }]
+						});
+					}	
+					initGrafico();
+				</script>
+			</div>
+		</div>
+	</div>
+
+
+
+{% endblock %}

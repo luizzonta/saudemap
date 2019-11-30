@@ -12,16 +12,14 @@
 	<div class="container">
 		<div class="row" >
 			<div class="col-sm-2">
-				<img class="img-fluid" class="img-thumbnail" src="{% static 'img/esus.jpg'%}" width="300" height="168" alt="Logotipo eSus"> 
+				<img class="img-fluid" class="img-thumbnail" src="{% static 'img/esus.jpg'%}" width="200" height="128" alt="Logotipo eSus"> 
 			</div>
 			<div class="col-sm-10">
-				<br>
 				<h1 class="text-center">
-					<p>Mapeamento Doenças</p>
+					<h2>Mapeamento Doenças Crônicas</h2>
 				</h1>
 			</div>
 			<div class="col-sm-3">
-				<br>
 			</div>
 		</div>
 	</div>
@@ -34,224 +32,265 @@
 					<div class="form-check">
 					<h6>	
 					    <input type="checkbox" class="form-check-input" id="hipertensaoArterial" OnClick="initMap()">
+						<img src="/static/img/marker1.png" width="20" height="15">
 					    <label class="form-check-label" for="hipertensaoArterial">Hipertensão Arterial</label>
 						<br>
 					    <input type="checkbox" class="form-check-input" id="diabetes" OnClick="initMap()">
+						<img src="/static/img/marker2.png" width="20" height="15">
 					    <label class="form-check-label" for="diabetes">Diabetes</label>
 						<br>
 					    <input type="checkbox" class="form-check-input" id="avcDerrame" OnClick="initMap()">
+						<img src="/static/img/marker3.png" width="20" height="15">
 					    <label class="form-check-label" for="avcDerrame">AVC/Derrame</label>
 						<br>
 					    <input type="checkbox" class="form-check-input" id="infarto" OnClick="initMap()">
+						<img src="/static/img/marker4.png" width="20" height="15">
 					    <label class="form-check-label" for="infarto">Infarto</label>
 						<br>
 					    <input type="checkbox" class="form-check-input" id="doencaCardiaca" OnClick="initMap()">
+						<img src="/static/img/marker5.png" width="20" height="15">
 					    <label class="form-check-label" for="doencaCardiaca">Cardiaca/coração</label>
 						<br>
 					    <input type="checkbox" class="form-check-input" id="problemaRins" OnClick="initMap()">
+						<img src="/static/img/marker6.png" width="20" height="15">
 					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins" OnClick="initMap()">
-					    <label class="form-check-label" for="problemaRins">.....</label>
+					    <input type="checkbox" class="form-check-input" id="hensaniase" OnClick="initMap()">
+						<img src="/static/img/marker7.png" width="20" height="15">
+					    <label class="form-check-label" for="hensaniase">Hanseníase</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins" OnClick="initMap()">
-					    <label class="form-check-label" for="problemaRins">.....</label>
+					    <input type="checkbox" class="form-check-input" id="cancer" OnClick="initMap()">
+						<img src="/static/img/marker8.png" width="20" height="15">
+					    <label class="form-check-label" for="cancer">Câncer</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
+					    <input type="checkbox" class="form-check-input" id="saudeMental" OnClick="initMap()">
+						<img src="/static/img/marker9.png" width="20" height="15">
+					    <label class="form-check-label" for="saudeMental">Problema Saúde Mental</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
+					    <input type="checkbox" class="form-check-input" id="internacao" OnClick="initMap()">
+						<img src="/static/img/marker10.png" width="20" height="15">
+					    <label class="form-check-label" for="internacao">Teve Alguma Internação</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
+					    <input type="checkbox" class="form-check-input" id="acamado" OnClick="initMap()">
+						<img src="/static/img/marker11.png" width="20" height="15">
+					    <label class="form-check-label" for="acamado">Está Acamado</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
+					    <input type="checkbox" class="form-check-input" id="doencaRespiratoria" OnClick="initMap()">
+						<img src="/static/img/marker12.png" width="20" height="15">
+					    <label class="form-check-label" for="doencaRespiratoria">Doença Respiratória</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
+					    <input type="checkbox" class="form-check-input" id="gestante" OnClick="initMap()">
+						<img src="/static/img/marker13.png" width="20" height="15">
+					    <label class="form-check-label" for="gestante">Está Gestante</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
+					    <input type="checkbox" class="form-check-input" id="fumante" OnClick="initMap()">
+						<img src="/static/img/marker14.png" width="20" height="15">
+					    <label class="form-check-label" for="fumante">É Fumante</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
-						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
-						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
-						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
-						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
-						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
-						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
-						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
-					    <label class="form-check-label" for="problemaRins">.....</label>
 					</h6>
 					</div>
 					<br>
-					<a href="#"><button type="button" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Enviar</button></a>
 					<a href="{% url 'index' %}"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left"></i> Voltar</button></a>
+					<br><br><br><br><br><br><br><br>
 
 				</form>
 			</div>
 			<div class="col-sm-9">
 				<div id="map"></div>
 				<script>
-				function initMap() {
-					var bp = {lat: -27.031, lng: -50.908};
-					var map = new google.maps.Map(document.getElementById('map'), {
-				    zoom: 15,
-				    center: bp
-				});
-
-				var locations = [
-					{% for FichaDoencas in FichaDoenca %}
-						{% if FichaDoencas.hipertensaoArterial == 'Sim' %}
-						['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'green', 1, -1],
-						{% endif %}
-
-						{% if FichaDoencas.diabetes == 'Sim' %}
-							['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'red', 2, -2],
-						{% endif %}
-
-						{% if FichaDoencas.avcDerrame == 'Sim' %}
-							['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'yellow', 3, -3],
-						{% endif %}
-
-						{% if FichaDoencas.infarto == 'Sim' %}
-							['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'blue', 4, -4],
-						{% endif %}
-
-						{% if FichaDoencas.doencaCardiaca == 'Sim' %}
-							['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'pink', 4, -4],
-						{% endif %}
-
-						{% if FichaDoencas.problemaRins == 'Sim' %}
-							['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'purple', 5, -5],
-						{% endif %}
-					{% endfor %}
-				];	
-
-				var green = ' ';
-				var red = ' '; 
-				var yellow = ' '; 
-				var blue = ' '; 
-				var pink = ' '; 
-				var purple = ' '; 
-
-				var hipertensaoArterial = document.getElementById("hipertensaoArterial");
-				if (hipertensaoArterial.checked == true){
-					green = '/static/img/green.png';
-				}
-				var diabetes = document.getElementById("diabetes");
-				if (diabetes.checked == true){
-					red = '/static/img/red.png';
-				}	
-				var avcDerrame = document.getElementById("avcDerrame");
-				if (avcDerrame.checked == true){
-					yellow = '/static/img/yellow.png';
-				}	
-				var infarto = document.getElementById("infarto");
-				if (infarto.checked == true){
-					blue = '/static/img/blue.png';
-				}	
-				var doencaCardiaca = document.getElementById("doencaCardiaca");
-				if (doencaCardiaca.checked == true){
-					pink = '/static/img/pink.png';
-				}	
-				var problemaRins = document.getElementById("problemaRins");
-				if (problemaRins.checked == true){
-					purple = '/static/img/purple.png';
-				}	
-						
-				var icons = {
-					'green': {
-						url: green,
-					},
-					'red': {
-						url: red,
-					},
-					'yellow': {
-						url: yellow,
-					},
-					'blue': {
-						url: blue,
-					},
-					'pink': {
-						url: pink,
-					},
-					'purple': {
-						url: purple,
+					function initMap() {
+						var bp = {lat: -27.0297943, lng: -50.908531};
+						var map = new google.maps.Map(document.getElementById('map'), {
+					    zoom: 14,
+					    center: bp,
+				        //mapTypeId: google.maps.MapTypeId.ROADMAP,
+						//draggable: true,
+						streetViewControl: false
+	
+					});
+	
+					var locations = [
+						{% for FichaDoencas in FichaDoenca %}
+							{% if FichaDoencas.hipertensaoArterial == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker1', 1, -1],
+							{% endif %}
+							{% if FichaDoencas.diabetes == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker2', 2, -2],
+							{% endif %}
+							{% if FichaDoencas.avcDerrame == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker3', 3, -3],
+							{% endif %}
+							{% if FichaDoencas.infarto == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker4', 4, -4],
+							{% endif %}
+							{% if FichaDoencas.doencaCardiaca == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker5', 4, -4],
+							{% endif %}
+							{% if FichaDoencas.problemaRins == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker6', 5, -5],
+							{% endif %}
+							{% if FichaDoencas.hensaniase == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker7', 6, -6],
+							{% endif %}
+							{% if FichaDoencas.cancer == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker8', 7, -7],
+							{% endif %}
+							{% if FichaDoencas.saudeMental == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker9', 8, -8],
+							{% endif %}
+							{% if FichaDoencas.internacao == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker10', 9, -9],
+							{% endif %}
+							{% if FichaDoencas.acamado == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker11', 10, -10],
+							{% endif %}
+							{% if FichaDoencas.doencaRespiratoria == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker12', 11, -11],
+							{% endif %}
+							{% if FichaDoencas.gestante == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker13', 12, -12],
+							{% endif %}
+							{% if FichaDoencas.fumante == 'Sim' %}
+								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'marker14', 13, -13],
+							{% endif %}
+						{% endfor %}
+					];	
+					
+					//https://www.iconfinder.com/icons/299087/map_marker_icon
+					
+					var marker1 = ' ';
+					var marker2 = ' '; 
+					var marker3 = ' '; 
+					var marker4 = ' '; 
+					var marker5 = ' '; 
+					var marker6 = ' '; 
+					var marker7 = ' '; 
+					var marker8 = ' '; 
+					var marker9 = ' '; 
+					var marker10 = ' '; 
+					var marker11 = ' '; 
+					var marker12 = ' '; 
+					var marker13 = ' '; 
+					var marker14 = ' '; 
+	
+					var hipertensaoArterial = document.getElementById("hipertensaoArterial");
+					if (hipertensaoArterial.checked == true){
+						marker1 = '/static/img/marker1.png';
 					}
-				};
-
-				   var image = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-				   for (var i = 0; i < locations.length; i++) {
-				     var item = locations[i];
-				     var marker = new MarkerWithLabel({
-				       position: {lat: item[1] + item[4]/100000, lng: item[2] + item[5]/100000},
-				       map: map,
-				       icon: icons[item[3]].url,
-				       labelAnchor: new google.maps.Point(item[4], item[5]),
-				     });
-				   }
-				 }
-				initMap();
-				
+					var diabetes = document.getElementById("diabetes");
+					if (diabetes.checked == true){
+						marker2 = '/static/img/marker2.png';
+					}	
+					var avcDerrame = document.getElementById("avcDerrame");
+					if (avcDerrame.checked == true){
+						marker3 = '/static/img/marker3.png';
+					}	
+					var infarto = document.getElementById("infarto");
+					if (infarto.checked == true){
+						marker4 = '/static/img/marker4.png';
+					}	
+					var doencaCardiaca = document.getElementById("doencaCardiaca");
+					if (doencaCardiaca.checked == true){
+						marker5 = '/static/img/marker5.png';
+					}	
+					var problemaRins = document.getElementById("problemaRins");
+					if (problemaRins.checked == true){
+						marker6 = '/static/img/marker6.png';
+					}	
+					var hensaniase = document.getElementById("hensaniase");
+					if (hensaniase.checked == true){
+						marker7 = '/static/img/marker7.png';
+					}	
+					var cancer = document.getElementById("cancer");
+					if (cancer.checked == true){
+						marker8 = '/static/img/marker8.png';
+					}	
+					var saudeMental = document.getElementById("saudeMental");
+					if (saudeMental.checked == true){
+						marker9 = '/static/img/marker9.png';
+					}	
+					var internacao = document.getElementById("internacao");
+					if (internacao.checked == true){
+						marker10 = '/static/img/marker10.png';
+					}	
+					var acamado = document.getElementById("acamado");
+					if (acamado.checked == true){
+						marker11 = '/static/img/marker11.png';
+					}	
+					var doencaRespiratoria = document.getElementById("doencaRespiratoria");
+					if (doencaRespiratoria.checked == true){
+						marker12 = '/static/img/marker12.png';
+					}	
+					var gestante = document.getElementById("gestante");
+					if (gestante.checked == true){
+						marker13 = '/static/img/marker13.png';
+					}	
+					var fumante = document.getElementById("fumante");
+					if (fumante.checked == true){
+						marker14 = '/static/img/marker14.png';
+					}	
+							
+					var icons = {
+						'marker1': {
+							url: marker1,
+						},
+						'marker2': {
+							url: marker2,
+						},
+						'marker3': {
+							url: marker3,
+						},
+						'marker4': {
+							url: marker4,
+						},
+						'marker5': {
+							url: marker5,
+						},
+						'marker6': {
+							url: marker6,
+						},
+						'marker7': {
+							url: marker7,
+						},
+						'marker8': {
+							url: marker8,
+						},
+						'marker9': {
+							url: marker9,
+						},
+						'marker10': {
+							url: marker10,
+						},
+						'marker11': {
+							url: marker11,
+						},
+						'marker12': {
+							url: marker12,
+						},
+						'marker13': {
+							url: marker13,
+						},
+						'marker14': {
+							url: marker14,
+						}
+					};
+	
+					   var image = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+					   for (var i = 0; i < locations.length; i++) {
+					     var item = locations[i];
+					     var marker = new MarkerWithLabel({
+					       position: {lat: item[1] + item[4]/100000, lng: item[2] + item[5]/100000},
+					       map: map,
+					       icon: icons[item[3]].url,
+					       labelAnchor: new google.maps.Point(item[4], item[5]),
+					     });
+					   }
+					 }
+					initMap();
 				</script>
-
-<!--
-				<script>
-			         function loadMap() {
-			            var mapOptions = {
-			               center:new google.maps.LatLng(-27.0316573, -50.9082924),
-			               zoom:15
-			            }
-			            
-			            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
-			            
-			            var marker = new google.maps.Marker({
-			               position: new google.maps.LatLng(-27.0387500, -50.9069900),
-			               map: map,
-			               draggable:true,
-			               icon:'/static/img/blue.png',
-			            });
-			            marker.setMap(map);
-			
-			            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
-			            
-			            var marker = new google.maps.Marker({
-			               position: new google.maps.LatLng(-27.0347500, -50.9069900),
-			               map: map,
-			               draggable:true,
-			               icon:'/static/img/red.png',
-			            });
-			            marker.setMap(map);
-			
-			         }
-				</script>
-				<body onload = "loadMap()">
-				   <div id = "sample" style = "width:780px; height:600px;" align="center"></div>
-				</body>
--->							
-
 			</div>
 		</div>
 	</div>
 
 
-<!-- Exemplo em javascript com SQLite: https://www.youtube.com/watch?v=7znA5k7gJqQ -->
- 
 {% endblock %}
