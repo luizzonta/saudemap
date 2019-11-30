@@ -39,22 +39,22 @@
 					    <input type="checkbox" class="form-check-input" id="diabetes" OnClick="initMap()">
 					    <label class="form-check-label" for="diabetes">Diabetes</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="avcDerrame">
+					    <input type="checkbox" class="form-check-input" id="avcDerrame" OnClick="initMap()">
 					    <label class="form-check-label" for="avcDerrame">AVC/Derrame</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="infarto">
+					    <input type="checkbox" class="form-check-input" id="infarto" OnClick="initMap()">
 					    <label class="form-check-label" for="infarto">Infarto</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="doencaCardiaca">
+					    <input type="checkbox" class="form-check-input" id="doencaCardiaca" OnClick="initMap()">
 					    <label class="form-check-label" for="doencaCardiaca">Cardiaca/coração</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <input type="checkbox" class="form-check-input" id="problemaRins" OnClick="initMap()">
 					    <label class="form-check-label" for="problemaRins">Problema Rins</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <input type="checkbox" class="form-check-input" id="problemaRins" OnClick="initMap()">
 					    <label class="form-check-label" for="problemaRins">.....</label>
 						<br>
-					    <input type="checkbox" class="form-check-input" id="problemaRins">
+					    <input type="checkbox" class="form-check-input" id="problemaRins" OnClick="initMap()">
 					    <label class="form-check-label" for="problemaRins">.....</label>
 						<br>
 					    <input type="checkbox" class="form-check-input" id="problemaRins">
@@ -115,52 +115,88 @@
 				    zoom: 15,
 				    center: bp
 				});
-			
-				var checkBox = document.getElementById("hipertensaoArterial");
-				if (checkBox.checked == true){
-					var locations = [
-						{% for FichaDoencas in FichaDoenca %}
-							{% if FichaDoencas.hipertensaoArterial == 'Sim' %}
-								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'green', 1, -1],
-							{% endif %}
-						{% endfor %}
-						];
-					}
-					
-				var checkBox1 = document.getElementById("diabetes");
-				if (checkBox1.checked == true){
-					var locations = [
-						{% for FichaDoencas in FichaDoenca %}
-							{% if FichaDoencas.diabetes == 'Sim' %}
-								['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'red', 2, -2],
-							{% endif %}
-						{% endfor %}
-						];
-					}
-					
+
+				var locations = [
+					{% for FichaDoencas in FichaDoenca %}
+						{% if FichaDoencas.hipertensaoArterial == 'Sim' %}
+						['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'green', 1, -1],
+						{% endif %}
+
+						{% if FichaDoencas.diabetes == 'Sim' %}
+							['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'red', 2, -2],
+						{% endif %}
+
+						{% if FichaDoencas.avcDerrame == 'Sim' %}
+							['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'yellow', 3, -3],
+						{% endif %}
+
+						{% if FichaDoencas.infarto == 'Sim' %}
+							['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'blue', 4, -4],
+						{% endif %}
+
+						{% if FichaDoencas.doencaCardiaca == 'Sim' %}
+							['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'pink', 4, -4],
+						{% endif %}
+
+						{% if FichaDoencas.problemaRins == 'Sim' %}
+							['{{ FichaDoencas.nomeCompleto }}', {{ FichaDoencas.latitude }}, {{ FichaDoencas.longitude }}, 'purple', 5, -5],
+						{% endif %}
+					{% endfor %}
+				];	
+
+				var green = ' ';
+				var red = ' '; 
+				var yellow = ' '; 
+				var blue = ' '; 
+				var pink = ' '; 
+				var purple = ' '; 
+
+				var hipertensaoArterial = document.getElementById("hipertensaoArterial");
+				if (hipertensaoArterial.checked == true){
+					green = '/static/img/green.png';
+				}
+				var diabetes = document.getElementById("diabetes");
+				if (diabetes.checked == true){
+					red = '/static/img/red.png';
+				}	
+				var avcDerrame = document.getElementById("avcDerrame");
+				if (avcDerrame.checked == true){
+					yellow = '/static/img/yellow.png';
+				}	
+				var infarto = document.getElementById("infarto");
+				if (infarto.checked == true){
+					blue = '/static/img/blue.png';
+				}	
+				var doencaCardiaca = document.getElementById("doencaCardiaca");
+				if (doencaCardiaca.checked == true){
+					pink = '/static/img/pink.png';
+				}	
+				var problemaRins = document.getElementById("problemaRins");
+				if (problemaRins.checked == true){
+					purple = '/static/img/purple.png';
+				}	
 						
-				   var icons = {
-				     'green': {
-				       url: '/static/img/green.png',
-				       color: '#58D400'
-				     },
-				     'yellow': {
-				       url: '/static/img/yellow.png',
-				       color: '#FCCA00'
-				     },
-				     'red': {
-				       url: '/static/img/red.png',
-				       color: '#D80027'
-				     },
-				     'pink': {
-				       url: '/static/img/pink.png',
-				       color: '#FF69B4'
-				     },
-				     'blue': {
-				       url: '/static/img/blue.png',
-				       color: '#0000FF'
-				     }
-				   };
+				var icons = {
+					'green': {
+						url: green,
+					},
+					'red': {
+						url: red,
+					},
+					'yellow': {
+						url: yellow,
+					},
+					'blue': {
+						url: blue,
+					},
+					'pink': {
+						url: pink,
+					},
+					'purple': {
+						url: purple,
+					}
+				};
+
 				   var image = 'https://fonts.googleapis.com/icon?family=Material+Icons';
 				   for (var i = 0; i < locations.length; i++) {
 				     var item = locations[i];
