@@ -31,51 +31,20 @@
 				<form>
 					<div class="form-check">
 					<h6>	
-					
-	<input type="radio" name="grafico" class="form-check-input" id="hipertensaoArterial" OnClick="initGrafico()" value="hipertensaoArterial"> Hipertensão Arterial<br>					
-	<input type="radio" name="grafico" class="form-check-input" id="diabetes" OnClick="initGrafico()" value="diabetes"> Diabetes<br>					
-	
-	<input type="checkbox" class="form-check-input" id="hipertensaoArterial" OnClick="initMap()">
-	<label class="form-check-label" for="hipertensaoArterial">Hipertensão Arterial</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="diabetes" OnClick="initMap()">
-	<label class="form-check-label" for="diabetes">Diabetes</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="avcDerrame" OnClick="initMap()">
-	<label class="form-check-label" for="avcDerrame">AVC/Derrame</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="infarto" OnClick="initMap()">
-	<label class="form-check-label" for="infarto">Infarto</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="doencaCardiaca" OnClick="initMap()">
-	<label class="form-check-label" for="doencaCardiaca">Cardiaca/coração</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="problemaRins" OnClick="initMap()">
-	<label class="form-check-label" for="problemaRins">Problema Rins</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="hensaniase" OnClick="initMap()">
-	<label class="form-check-label" for="hensaniase">Hanseníase</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="cancer" OnClick="initMap()">
-	<label class="form-check-label" for="cancer">Câncer</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="saudeMental" OnClick="initMap()">
-	<label class="form-check-label" for="saudeMental">Problema Saúde Mental</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="internacao" OnClick="initMap()">
-	<label class="form-check-label" for="internacao">Teve Alguma Internação</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="acamado" OnClick="initMap()">
-	<label class="form-check-label" for="acamado">Está Acamado</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="doencaRespiratoria" OnClick="initMap()">
-	<label class="form-check-label" for="doencaRespiratoria">Doença Respiratória</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="gestante" OnClick="initMap()">
-	<label class="form-check-label" for="gestante">Está Gestante</label>
-	<br>
-	<input type="checkbox" class="form-check-input" id="fumante" OnClick="initMap()">
-	<label class="form-check-label" for="fumante">É Fumante</label>
+						<input type="radio" name="grafico" class="form-check-input" id="hipertensaoArterial" OnClick="initGrafico()" value="hipertensaoArterial"> Hipertensão Arterial<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="diabetes" OnClick="initGrafico()" value="diabetes"> Diabetes<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="avcDerrame" OnClick="initGrafico()" value="avcDerrame"> AVC/Derrame<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="infarto" OnClick="initGrafico()" value="infarto"> Infarto<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="doencaCardiaca" OnClick="initGrafico()" value="doencaCardiaca"> Cardiaca/coração<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="problemaRins" OnClick="initGrafico()" value="problemaRins"> Problema Rins<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="hensaniase" OnClick="initGrafico()" value="hensaniase"> Hanseníase<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="cancer" OnClick="initGrafico()" value="cancer"> Câncer<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="saudeMental" OnClick="initGrafico()" value="saudeMental"> Problema Saúde Mental<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="internacao" OnClick="initGrafico()" value="internacao"> Teve Alguma Internação<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="acamado" OnClick="initGrafico()" value="acamado"> Está Acamado<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="doencaRespiratoria" OnClick="initGrafico()" value="doencaRespiratoria"> Doença Respiratória<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="gestante" OnClick="initGrafico()" value="gestante"> Está Gestante<br>					
+						<input type="radio" name="grafico" class="form-check-input" id="fumante" OnClick="initGrafico()" value="fumante"> É Fumante<br>
 						<br>
 					</h6>
 					</div>
@@ -90,23 +59,163 @@
 				<script src="https://code.highcharts.com/highcharts.src.js"></script>
 				<script>
 					function initGrafico() {
+						var contaSim = 0;
+						var contaNao = 0;
+						var doenca = "";
+						{% for FichaDoencas in FichaDoenca %}
+							var hipertensaoArterial = document.getElementById("hipertensaoArterial");
+							if (hipertensaoArterial.checked == true){
+								doenca = "Hipertensao Arterial";
+								{% if FichaDoencas.hipertensaoArterial == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}
+							var diabetes = document.getElementById("diabetes");
+							if (diabetes.checked == true){
+								doenca = "Diabetes";
+								{% if FichaDoencas.diabetes == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var avcDerrame = document.getElementById("avcDerrame");
+							if (avcDerrame.checked == true){
+								doenca = "AVC/Derrame";
+								{% if FichaDoencas.avcDerrame == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var infarto = document.getElementById("infarto");
+							if (infarto.checked == true){
+								doenca = "Infarto";
+								{% if FichaDoencas.infarto == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var doencaCardiaca = document.getElementById("doencaCardiaca");
+							if (doencaCardiaca.checked == true){
+								doenca = "Cardiaca/coração";
+								{% if FichaDoencas.doencaCardiaca == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var problemaRins = document.getElementById("problemaRins");
+							if (problemaRins.checked == true){
+								doenca = "Problema Rins";
+								{% if FichaDoencas.problemaRins == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var hensaniase = document.getElementById("hensaniase");
+							if (hensaniase.checked == true){
+								doenca = "Hanseníase";
+								{% if FichaDoencas.hensaniase == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var cancer = document.getElementById("cancer");
+							if (cancer.checked == true){
+								doenca = "Câncer";
+								{% if FichaDoencas.cancer == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var saudeMental = document.getElementById("saudeMental");
+							if (saudeMental.checked == true){
+								doenca = "Problema Saúde Mental";
+								{% if FichaDoencas.saudeMental == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var internacao = document.getElementById("internacao");
+							if (internacao.checked == true){
+								doenca = "Teve Alguma Internação";
+								{% if FichaDoencas.internacao == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var acamado = document.getElementById("acamado");
+							if (acamado.checked == true){
+								doenca = "Está Acamado";
+								{% if FichaDoencas.acamado == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var doencaRespiratoria = document.getElementById("doencaRespiratoria");
+							if (doencaRespiratoria.checked == true){
+								doenca = "Doença Respiratória";
+								{% if FichaDoencas.doencaRespiratoria == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var gestante = document.getElementById("gestante");
+							if (gestante.checked == true){
+								doenca = "Está Gestante";
+								{% if FichaDoencas.gestante == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+							var fumante = document.getElementById("fumante");
+							if (fumante.checked == true){
+								doenca = "É Fumante";
+								{% if FichaDoencas.fumante == 'Sim' %}
+									contaSim++;
+								{% else %}
+									contaNao++;
+								{% endif %}
+							}	
+						{% endfor %}
+
 						Highcharts.chart('container', {
 					    	chart: {
 					        	type: 'column'
 					        },
 					        title: {
-					            text: 'Tipo Doença: '
+					            text: 'Tipo Doença: ' + doenca
 					        },
 					        xAxis: {
-					            categories: ['Diabete']
+					            categories: [doenca]
+					        },
+
+							plotOptions: {
+					            column: {
+					                dataLabels: {
+					                    enabled: true
+					                }
+					            }
 					        },
 					        series: [{
 					            name: 'Sim',
-					            data: [107],
+					            data: [contaSim],
 	          					color: 'red'
 					        }, {
 					            name: 'Não',
-					            data: [1052],
+					            data: [contaNao],
 	          					color: 'green'
 					        }]
 						});
