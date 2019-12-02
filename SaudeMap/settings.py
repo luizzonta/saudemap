@@ -15,6 +15,8 @@ from django.conf.global_settings import LOGIN_REDIRECT_URL, LOGIN_URL,\
     LOGOUT_REDIRECT_URL
 import SaudeMap
 import AppSaudeMap
+import django_heroku
+
     
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -127,13 +129,10 @@ DEFAULT_CHARSET="iso-8859-1"
 
 
 # Static files (CSS, JavaScript, Images)
-
 #https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-import django_heroku
-
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #Adicionar para HEROKU
 
 MEDIA_URL = '/media/'
