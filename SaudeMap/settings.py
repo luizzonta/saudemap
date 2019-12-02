@@ -124,12 +124,12 @@ USE_TZ = True
 
 DEFAULT_CHARSET="iso-8859-1"
 
-Static files (CSS, JavaScript, Images)
-https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(SaudeMap, 'staticfiles')
+#Static files (CSS, JavaScript, Images)
+#https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join('https://saudemap.herokuapp.com/saudemap/', 'staticfiles')
 STATIC_URL = '/static/'
 
-#MEDIA_ROOT=os.path.join(SaudeMap,'media')
+MEDIA_ROOT=os.path.join('https://saudemap.herokuapp.com/saudemap/','media')
 MEDIA_URL='/media/'
 
 
