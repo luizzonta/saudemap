@@ -133,7 +133,7 @@ DEFAULT_CHARSET="iso-8859-1"
 import django_heroku
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #Adicionar para HEROKU
 
 MEDIA_URL = '/media/'
@@ -142,7 +142,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 django_heroku.settings(locals())
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#Static files (CSS, JavaScript, Images)
+#https://docs.djangoproject.com/en/1.9/howto/static-files/
+#STATIC_ROOT = os.path.join('https://saudemap.herokuapp.com/saudemap/', 'staticfiles')
+#STATIC_URL = '/static/'
+
+#MEDIA_ROOT=os.path.join('https://saudemap.herokuapp.com/saudemap/','media')
+#MEDIA_URL='/media/'
+
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 LOGIN_REDIRECT_URL = '../saudemap'
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'login'
