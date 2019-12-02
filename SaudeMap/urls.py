@@ -6,4 +6,4 @@ urlpatterns = [
     path('saudemap/', include('AppSaudeMap.urls')),
     path('admin/', admin.site.urls),
     path('', include('AppLogin.urls')),
-]
+] 

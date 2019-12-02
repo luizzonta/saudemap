@@ -124,13 +124,22 @@ USE_TZ = True
 
 DEFAULT_CHARSET="iso-8859-1"
 
-#Static files (CSS, JavaScript, Images)
-#https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join('https://saudemap.herokuapp.com/saudemap/', 'staticfiles')
-STATIC_URL = '/static/'
 
-MEDIA_ROOT=os.path.join('https://saudemap.herokuapp.com/saudemap/','media')
-MEDIA_URL='/media/'
+
+# Static files (CSS, JavaScript, Images)
+
+#https://docs.djangoproject.com/en/2.2/howto/static-files/
+
+import django_heroku
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#Adicionar para HEROKU
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#Adicionar para HEROKU
+django_heroku.settings(locals())
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
