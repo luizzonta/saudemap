@@ -17,6 +17,11 @@
 
 * SQLite
 
+### Produção
+
+* Heroku (<https://saudemap.herokuapp.com/login/?next=/saudemap/>)
+
+
 ### Bibliotecas
 
 * Highcharts - para criação de gráficos
