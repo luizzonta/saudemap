@@ -15,7 +15,6 @@ from django.conf.global_settings import LOGIN_REDIRECT_URL, LOGIN_URL,\
     LOGOUT_REDIRECT_URL
 import SaudeMap
 import AppSaudeMap
-import django_heroku
 
     
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
