@@ -57,5 +57,5 @@ senha: projetoifc
 1. Dê Fork no projeto (<https://github.com/luizzonta/saudemap/fork>)
 2. Crie sua branch (`git checkout -b feature/NovoMap`)
 3. Commit suas mudanças (`git commit -am 'Add nova alteração no mapa'`)
-4. Push to the branch (`git push origin feature/novoMapa`)
+4. Push na Branch (`git push origin feature/novoMapa`)
 5. Crie um novo Pull Request
